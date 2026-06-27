@@ -28,19 +28,27 @@ Core of WebSocket: After the connection is established, the server can actively 
 
 # Detailed Communication Process
 1. Client Connection
+   
    Flutter: WebSocketChannel.connect()
+   
    Python: Connection received, print "✅ Client connected successfully!"
 
 2. Client Sends Message
+   
    Flutter: channel.sink.add("Hello")
+   
    Python: Receive "Hello", print "📩 Received: Hello"
 
 3. Server Reply
+ 
    Python: await websocket.send("Reply: Hello")
+   
    Flutter: Stream is triggered, display "Received: Reply: Hello"
 
 4. Client Disconnection
+   
    Flutter: channel.sink.close()
+   
    Python: Exit the async for loop, print "👋 Client disconnected"
 
 # Common Issue: Why does the connection disconnect immediately?
