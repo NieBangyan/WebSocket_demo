@@ -3,6 +3,7 @@
 This is a very simple WebSocket communication demo 
 - **python Server**:Receive messages and echo them back (Echo Service)
 - **Flutter Client**:Connect to server,send messages and display responses
+
 **Core Objective**: Understand the full lifecycle of WebSocket: handshake → communication → closure.
 
 # Project Structure
@@ -41,3 +42,9 @@ Core of WebSocket: After the connection is established, the server can actively 
 4. Client Disconnection
    Flutter: channel.sink.close()
    Python: Exit the async for loop, print "👋 Client disconnected"
+
+# Common Issue: Why does the connection disconnect immediately?
+Common causes:
+- Errors in server code (e.g., missing the path parameter in `echo()`)
+- Port occupied
+- Blocked by firewall
